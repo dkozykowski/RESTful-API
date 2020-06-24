@@ -1,5 +1,5 @@
 # RESTfull-Api
-It is a simple RESTful API webservice responsible for managing and storing notes as records in a database. 
+It is a simple RESTful API webservice responsible for managing and storing notes as records in a database. The database used is MongoDB.
 
 ## Features
 - CRUD service - create, read, update and delete notes
