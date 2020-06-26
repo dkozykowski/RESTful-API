@@ -8,9 +8,11 @@ router.post('/', async (req, res) => {
         title: req.body.title,
         description: req.body.description
     });
+    post.noteID = post._id;
+    if (req.body.priority) post.priority = req.body.priority;
     try {
         const savedPost = await post.save();
-        res.json(savedPost);  
+        res.json(savedPost);
     }catch(err){
         res.json({message: err});
     }

@@ -1,6 +1,13 @@
 const mongoose = require('mongoose');
 
 const PostSchema = mongoose.Schema({
+    noteID: {
+        type: String
+    },
+    priority: {
+        type: Number,
+        default: 1
+    },
     title: {
         type: String,
         required: true
@@ -9,9 +16,23 @@ const PostSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    date: {
+    created: {
         type: Date,
         default: Date.now,
+    },
+    modified: {
+        type: Date,
+        default: Date.now,
+    },
+    version: {
+        type: Number,
+        default: 1,
+        select: false
+    },
+    status: {
+        type: String,
+        default: 'Active',
+        //select: false
     }
 })
 
