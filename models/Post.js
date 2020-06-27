@@ -27,12 +27,12 @@ const PostSchema = mongoose.Schema({
     version: {
         type: Number,
         default: 1,
-        select: false
+        //select: false
     },
     status: {
         type: String,
         default: 'Active',
-        //select: false
+        select: false
     }
 })
 

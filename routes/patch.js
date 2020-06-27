@@ -9,15 +9,10 @@ router.patch('/:postID', (req, res) => {
             noteID: req.params.postID,
             status: 'Active'
         },
-        { $set : 
-            { 
-                status: 'Outdated'
-            }
-        }, 
-        {
-            lean: true
-        },
+        { $set : { status: 'Outdated' }}, 
+        { lean: true },
         function(err, result) {
+            console.log(result);
             if (err) {
               res.send(err);
             } else {
@@ -28,6 +23,7 @@ router.patch('/:postID', (req, res) => {
                     priority: result.priority,
                     noteID: result.noteID,
                     created: result.created,
+                    version: result.version + 1
                 });
                 newPost.save() 
                     .then(data => {
