@@ -15,14 +15,8 @@ mongoose.connect(process.env.LOGIN_URL, { useNewUrlParser: true },  () =>
 app.use(bodyParser.json());
 
 // import routes
-const getShortcut = require('./routes/get');
-const postShortcut = require('./routes/post');
-const patchShortcut = require('./routes/patch');
-const deleteShortcut = require('./routes/delete');
-app.use('/records', getShortcut);
-app.use('/post', postShortcut);
-app.use('/patch', patchShortcut);
-app.use('/delete', deleteShortcut);
+const postsRoute = require('./routes/posts');
+app.use('/', postsRoute);
 
 // home page
 app.get('/', (req, res) => {
