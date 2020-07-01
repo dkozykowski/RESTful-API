@@ -26,7 +26,7 @@ Please notice, that notes' ID are stored in noteID field, the \_id  field stores
      * ```GET /p?description=p6``` - filters only posts with description equal to p6
      * ```GET /p?status=p7``` - filters only posts with status equal to p7
      
- example call: ```GET /p?dateGT="2019-01-01"&dateLT="2020-01-01&priorityGT=3&status="Active"``` - this call will return all active posts modifed in 2020 year which priority is greater than 3
+ example call: ```GET /p?dateGT="2019-01-01"&dateLT="2020-01-01"&priorityGT=3&status="Active"``` - this call will return all active posts modifed in 2020 year which priority is greater than 3
      
      
      
