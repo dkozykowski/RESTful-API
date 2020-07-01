@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const postsRoute = require('./routes/posts');
 
 // package used to hide password to DB in .env
 require('dotenv/config');
@@ -15,7 +16,6 @@ mongoose.connect(process.env.LOGIN_URL, { useNewUrlParser: true },  () =>
 app.use(bodyParser.json());
 
 // import routes
-const postsRoute = require('./routes/posts');
 app.use('/', postsRoute);
 
 // home page
